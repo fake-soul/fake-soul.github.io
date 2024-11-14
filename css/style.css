@@ -1,27 +1,67 @@
-body{
-    font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
-    transition: all 1s;
-    color:#424242;
+/* Modern Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-a{
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #2d3436;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+}
+
+a {
     color: inherit;
     text-decoration: none;
+    transition: all 0.3s ease;
 }
 
-.container-section {  
-    height: 100%;
-    width: 100%; 
+a:hover {
+    color: #0984e3;
 }
-.container-box::after {
-    /* Set content to be an attribute on the element */
-    content: attr(data-value); 
+
+.container-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.container-box {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    border-radius: 18px;
+    padding: 4rem 3rem;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(0);
+    transition: all 0.3s ease;
     position: relative;
-    left: 50%;
-    top: 15px;
-    color: gray;
+    text-align: center;
 }
 
-.btn-stop{
+.container-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.container-box::after {
+    content: attr(data-value);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -2rem;
+    color: #636e72;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.btn-stop {
     transition: all .5s;
     border: none;
     background: rgb(88, 88, 88);
@@ -34,55 +74,67 @@ a{
     font-size: inherit;
     left: 0;
 }
-.container-box{
-    -webkit-box-shadow: 6px 6px 22px -1px rgba(128, 128, 128, 0.81);
-    -moz-box-shadow: 6px 6px 22px -1px rgba(128, 128, 128, 0.81);
-    box-shadow: 6px 6px 22px -1px rgba(128, 128, 128, 0.81);
-    width: 90%;
-    background: #ffffffc7;
-    transition: all 1s;
-    margin: 14% auto;
-    padding: 30px;  
-    text-align: center;
-    position: relative;
+
+.hello-myname {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: #1d1d1f;
 }
 
-.hello-myname{
-    font-size: xx-large; 
+.intro-text {
+    white-space: nowrap;
+    margin-right: 0.4rem;
+    font-weight: 400;
+    color: #86868b;
+    font-size: 2rem;
 }
 
-#socil-icons{
+.inline-heading {
+    display: inline;
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0 0.2rem;
+    color: #1d1d1f;
+    letter-spacing: -0.022em;
+}
+
+#socil-icons {
     padding: 0;
     color: #585858;
 }
-#socil-icons li{
+
+#socil-icons li {
     display: inline;
     margin: 0px 5px;
 }
- 
-#socil-icons .iconi{
+
+#socil-icons .iconi {
     font-size: 30px; 
 }
 
-.italic-larger-txt{
-    font-size: larger; 
-    font-style: italic;
-
+.italic-larger-txt {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #86868b;
+    margin: 1.5rem 0 2.5rem 0;
+    letter-spacing: -0.022em;
 }
-
 
 @keyframes typingEffect {
     from {opacity: 1;}
     to {opacity: 0;}
   }
-   
+
   #typing-effect {   
-    animation: typingEffect .5s infinite alternate;
-    color: black;
-    font-weight: bolder;
+    animation: typingEffect .8s infinite alternate;
+    color: #1d1d1f;
+    font-weight: 400;
+    margin-left: 0.2rem;
+    opacity: 0.8;
   }
 
-  .footer{
+  .footer {
     z-index: 1000;
     text-align: center; 
     position: fixed;
@@ -92,6 +144,7 @@ a{
     text-align: center;
     margin-bottom: 9px;
   }
+
   @media  (max-width:1000px){
      
   }
