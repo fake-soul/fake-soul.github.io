@@ -11,7 +11,7 @@ var randomWidth = () => {
   } else {
     x = getRndInteger(30, 70); 
     document.querySelector(".container-box").style.width = x + "%";
-    document.querySelector(".container-box").setAttribute("data-value", x+ "%"); 
+    // document.querySelector(".container-box").setAttribute("data-value", x+ "%"); 
 
   }
 };
